@@ -1,0 +1,21 @@
+number_base2 = int(input("please enter the base 2 number : ")) #รับค่าฐาน 2
+list_number_base2 = [int(a)for a in str(number_base2)] #แยกเลข
+
+check_len_number_base2 = len(list_number_base2) #นับจำนวน
+
+if check_len_number_base2 < 16 : #เช็งว่าเกิน 16 บิตมั้ย
+    check_list_number_base2 = check_len_number_base2  % 4 #เช็คกว่าครบมั้ย
+
+    if check_list_number_base2 == 0 : #ถ้าครบ
+        i = 0
+        y = 0
+        while i < check_len_number_base2 : #แปลงเลข
+           x = list_number_base2[i]
+           y = x*(2**i)+y
+           i +=1
+        print("base 10 number : ",y)
+    else :
+        print("error")
+
+else :
+    print("error")
